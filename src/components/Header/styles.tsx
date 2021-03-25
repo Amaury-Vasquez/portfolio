@@ -9,7 +9,7 @@ export const HeaderContainer = styled.header`
   border-top: none;
   justify-content: space-between;
   box-sizing: border-box;
-  border-radius: 5px;
+  background-color: var(--white);
 `;
 
 export const Hello = styled.div`
@@ -19,6 +19,7 @@ export const Hello = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding: 10px;
+
   & > svg {
     font-size: 50px;
     margin-right: 2vw;
@@ -36,6 +37,7 @@ export const NavBar = styled.nav`
   height: 100%;
   width: 30vw;
   align-self: flex-end;
+
   & > ul {
     display: flex;
     justify-content: space-around;
@@ -51,6 +53,7 @@ export const NavBarItem = styled.div<{ active: boolean }>`
   justify-content: center;
   align-items: center;
   align-self: flex-end;
+
   & > a {
     color: var(--gray-text);
     font-size: 16px;
@@ -60,6 +63,10 @@ export const NavBarItem = styled.div<{ active: boolean }>`
     display: flex;
     align-items: center;
     padding: 20px;
+
+    &:hover {
+      opacity: 0.6;
+    }
     & > li > svg {
       margin-left: 0.5vw;
     }

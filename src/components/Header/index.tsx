@@ -7,13 +7,13 @@ import { HeaderContainer, Hello, NavBar, NavBarItem } from "./styles";
 
 export const Header = () => {
   const url = useLocation();
-  console.log(url);
   const navItems = [
     { icon: <FcHome />, link: "/", text: "home" },
     { icon: <FcAbout />, link: "/about", text: "about" },
     { icon: <FaProjectDiagram />, link: "/projects", text: "projects" },
     { icon: <FcBusinessContact />, link: "/contact", text: "contact" },
   ];
+
   return (
     <HeaderContainer>
       <Hello>
