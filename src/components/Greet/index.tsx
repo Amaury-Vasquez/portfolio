@@ -15,7 +15,7 @@ export const Greet = () => {
         <p> I'm a web developer and a tech fan. </p>
         <p> Currently studying computer science at IPN.</p>
         <p>
-          Active student at Platzi. <SiPlatzi style={{ fill: "#7eca9c" }} />
+          Active student at Platzi. <SiPlatzi style={{ fill: "#9ede73" }} />
         </p>
         <br />
         <h3> Skills </h3>
@@ -23,7 +23,8 @@ export const Greet = () => {
           React (proficient) <FaReact style={{ fill: "var(--blue)" }} /> <br />
           Typescript (proficient)
           <SiTypescript style={{ fill: "var(--blue)" }} /> <br />
-          Python (intermediate) <FaPython /> <br />
+          Python (intermediate) <FaPython style={{ fill: "var(--blue)" }} />
+          <br />
           Flask (beginner) <SiFlask style={{ fill: "var(--red)" }} /> <br />
           MySQL (beginner) <SiMysql /> <br />
         </p>
