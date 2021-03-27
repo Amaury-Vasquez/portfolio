@@ -14,4 +14,8 @@ export const Table = styled.div`
   &::-webkit-scrollbar {
     background: inherit;
   }
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+    margin-top: 5vh;
+  }
 `;
