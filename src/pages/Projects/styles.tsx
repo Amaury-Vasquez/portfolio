@@ -1,13 +1,10 @@
 import styled from "styled-components";
 
-export const Info = styled.div`
-  height: 6vh;
-  width: 100%;
-  padding: 20px;
+export const Info = styled.h2`
   text-align: center;
-  & > h2 {
-    color: var(--gray-text);
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
+  position: relative;
+  top: 3%;
+  color: var(--gray-text);
+  font-size: 1.5rem;
+  font-weight: 600;
 `;
