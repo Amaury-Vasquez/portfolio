@@ -5,24 +5,24 @@ import { fadeIn } from "../../styles/animation";
 export const Card = styled.div`
   height: 25vh;
   width: 100%;
-  border: 1px solid var(--gray);
-  border-style: dashed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* border: 1px solid var(--gray); */
+  /* border-style: dashed; */
+  display: block;
+  position: relative;
   border-radius: 5px;
+  box-shadow: var(--shadow);
   &:hover {
-    & > div:first-child {
+    & > span:first-child {
       display: block;
     }
   }
 `;
 
-export const Container = styled.div`
+export const Container = styled.figure`
   height: 100%;
   width: 100%;
+  margin: auto;
   text-align: center;
-  align-items: center;
   box-sizing: border-box;
 `;
 
@@ -30,20 +30,21 @@ export const Image = styled.img`
   ${fadeIn()};
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 2px;
   cursor: pointer;
 `;
 
-export const Info = styled.div`
+export const Info = styled.span`
   display: none;
   position: absolute;
-  width: 22vw;
-  height: 25vh;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 4px;
   text-align: center;
   color: var(--white);
-
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   & > h3 {
     position: relative;
     top: 40%;
