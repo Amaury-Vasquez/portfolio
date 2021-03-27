@@ -9,6 +9,12 @@ export const Content = styled.div`
   border-left: 1px solid var(--gray);
   border-right: 1px solid var(--gray);
   margin: 0 auto;
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    padding: 10px;
+    border: none;
+  }
 `;
 
 export const Page = styled.div`

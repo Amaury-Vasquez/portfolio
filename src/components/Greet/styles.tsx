@@ -9,6 +9,11 @@ export const Welcome = styled.div`
   justify-content: center;
   box-sizing: border-box;
   padding: 10px;
+
+  @media screen and (max-width: 500px) {
+    display: block;
+    height: auto;
+  }
 `;
 
 export const Info = styled.article`
@@ -16,19 +21,24 @@ export const Info = styled.article`
   height: auto;
   line-height: 5vh;
   color: var(--gray-text);
-  font-size: 20px;
+  font-size: 16px;
   & > h2 {
     text-align: center;
-    font-size: 2em;
+    font-size: 2.5em;
   }
   & > h3 {
-    font-size: 1.5em;
+    font-size: 2em;
   }
   p {
     text-align: left;
+    font-size: 1.3em;
     & > svg {
       margin-left: 1vw;
-      font-size: 1.2em;
+      font-size: 1.3em;
     }
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 12px;
+    margin-top: 2vh;
   }
 `;

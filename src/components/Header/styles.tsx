@@ -10,6 +10,15 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   box-sizing: border-box;
   background-color: var(--white);
+  align-items: center;
+
+  @media screen and (max-width: 500px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 16vh;
+    width: 100%;
+    border: none;
+  }
 `;
 
 export const Hello = styled.div`
@@ -21,14 +30,19 @@ export const Hello = styled.div`
   padding: 10px;
 
   & > svg {
-    font-size: 50px;
+    font-size: 3rem;
     margin-right: 2vw;
   }
   & > h3 {
-    font-size: 18px;
+    font-size: 1.2rem;
     font-style: italic;
     font-weight: 500;
     color: var(--gray-text);
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    justify-content: space-around;
   }
 `;
 
@@ -44,6 +58,11 @@ export const NavBar = styled.nav`
     width: 100%;
     align-items: center;
   }
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 export const NavBarItem = styled.div<{ active: boolean }>`
@@ -56,7 +75,6 @@ export const NavBarItem = styled.div<{ active: boolean }>`
 
   & > a {
     color: var(--gray-text);
-    font-size: 16px;
     text-transform: capitalize;
     height: 6vh;
     align-self: flex-end;
