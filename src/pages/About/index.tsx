@@ -9,8 +9,9 @@ export const About = () => {
           “Knowing others is intelligence, knowing yourself is true wisdom.
           Mastering others is strength, mastering yourself is true power.”
           <br />
-          <h3> {"― Lao Tzu, Tao Te Ching"} </h3>
         </p>
+        <h3> {"― Lao Tzu, Tao Te Ching"} </h3>
+
       </Article>
       <AboutInfo>
         <Article>
