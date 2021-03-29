@@ -33,6 +33,7 @@ export const SocialMedia = () => {
           rel="noopener noreferrer"
           target="_blank"
           title={item.link}
+          key={i + item.link}
         >
           {<item.icon fill={item.color} />}
         </a>
