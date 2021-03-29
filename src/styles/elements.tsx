@@ -6,8 +6,6 @@ export const Content = styled.div`
   box-sizing: border-box;
   width: var(--content-width);
   background-color: var(--white);
-  border-left: 1px solid var(--gray);
-  border-right: 1px solid var(--gray);
   margin: 0 auto;
 
   @media screen and (max-width: 500px) {
