@@ -50,6 +50,9 @@ export const Info = styled.span`
     top: 40%;
     color: var(--white);
     text-transform: capitalize;
+    @media screen and (max-width: 500px) {
+      top: 30%;
+    }
   }
 `;
 
@@ -68,5 +71,11 @@ export const Link = styled.div`
     text-transform: capitalize;
     color: var(--white);
     font-weight: 500;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 40vw;
+    height: 8vh;
+    top: 50%;
   }
 `;
