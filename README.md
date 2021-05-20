@@ -18,4 +18,4 @@
 <li> typescript </li>
 
 <h4> Contact </h4>
-<p> email: <strong> amaury.vasquezenriquez@gmail.com </strong>
+<p> email: <strong> amaury.vasquezenriquez@gmail.com </strong> </p>
