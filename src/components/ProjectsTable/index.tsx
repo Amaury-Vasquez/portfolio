@@ -1,37 +1,11 @@
 import React from "react";
 
-import { Table } from "./styles";
+import { Table, TextBox } from "./styles";
 import { ProjectCard } from "../ProjectCard";
+import { ProjectData } from "../../interfaces/index";
 
-export const ProjectsTable = () => {
-  const projects = [
-    {
-      imgUrl: "https://i.imgur.com/1etL6MF.png",
-      link: "https://github.com/Amaury-Vasquez/pizzal-chat-bot",
-      name: "chat bot",
-    },
-    {
-      imgUrl: "https://i.imgur.com/MfCafDP.png",
-      link: "https://pokerama.netlify.app/",
-      name: "pokerama",
-    },
-    {
-      imgUrl: "https://i.imgur.com/z2dTHy7.png",
-      link: "https://tscheckers.netlify.app/",
-      name: "checkers",
-    },
-    {
-      imgUrl: "https://i.imgur.com/9urSYHg.png",
-      link: "https://amaury-vasquez.github.io/rock-paper-scissors/",
-      name: "rock, paper & scissors",
-    },
-
-    {
-      imgUrl: "https://i.imgur.com/gI5qP3s.png",
-      link: "https://amauryvasquezblog.netlify.app/",
-      name: "blog",
-    },
-  ];
+export const ProjectsTable = (props: { projects: ProjectData[] }) => {
+  const { projects } = props;
   return (
     <Table>
       {projects.map((item, i) => (
@@ -42,6 +16,9 @@ export const ProjectsTable = () => {
           key={i + item.name}
         />
       ))}
+      <TextBox>
+        <h3> {"There are more to come..."} </h3>
+      </TextBox>
     </Table>
   );
 };

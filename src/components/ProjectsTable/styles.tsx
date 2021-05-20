@@ -19,3 +19,20 @@ export const Table = styled.div`
     margin-top: 5vh;
   }
 `;
+
+export const TextBox = styled.div`
+  width: 100%;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > h3 {
+    color: var(--gray-text);
+    font-size: 25px;
+  }
+  @media screen and (max-width: 500px) {
+    grid-column-end: 2;
+    margin-top: 2vh;
+  }
+`;
