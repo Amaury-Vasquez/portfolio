@@ -2,7 +2,7 @@
 <h2> Description </h2> 
 <p> Site created as home page for my portfolio. </p>
 <a href="https://amaury-vasquez-portfolio.netlify.app/" target="_blank"> Portfolio </a>
-<h3> Installation <h3>
+<h3> Installation </h3>
 <ul> 
   <li> Clone the repository </li>
   <li> Run <strong> npm install </strong> on main folder </li>
