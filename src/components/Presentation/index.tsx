@@ -6,7 +6,7 @@ export const Presentation = () => {
   return (
     <PresentationCard>
       <Picture>
-        <Image src="https://i.imgur.com/L1RCK7b.jpg" alt="amaury vasquez" />
+        <Image src="https://i.imgur.com/ezQGORA.png" alt="amaury vasquez" />
         <Name> {"amaury vasquez"} </Name>
       </Picture>
     </PresentationCard>
