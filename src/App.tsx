@@ -1,4 +1,5 @@
-import { Fragment, Suspense } from "react";
+import { Suspense } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { About } from "./pages/About";
@@ -11,7 +12,7 @@ import { GlobalStyles } from "./styles/GlobalStyles";
 
 function App() {
   return (
-    <Fragment>
+    <HelmetProvider context={{}}>
       <GlobalStyles />
       <BrowserRouter>
         <Layout>
@@ -25,7 +26,7 @@ function App() {
           </Suspense>
         </Layout>
       </BrowserRouter>
-    </Fragment>
+    </HelmetProvider>
   );
 }
 

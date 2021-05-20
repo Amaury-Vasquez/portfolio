@@ -1,7 +1,15 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { Helmet } from "react-helmet-async";
 
 import { Greet } from "../../components/Greet";
 
 export const Home = () => {
-  return <Greet />;
+  return (
+    <Fragment>
+      <Helmet>
+        <title> Home - Amaury Vasquez </title>
+      </Helmet>
+      <Greet />
+    </Fragment>
+  );
 };

@@ -1,9 +1,14 @@
 import { Fragment } from "react";
+import { Helmet } from "react-helmet-async";
+
 import { AboutInfo, Article } from "./styles";
 
 export const About = () => {
   return (
     <Fragment>
+      <Helmet>
+        <title> About - Amaury Vasquez </title>
+      </Helmet>
       <Article quote={true}>
         <p>
           “Knowing others is intelligence, knowing yourself is true wisdom.
@@ -11,7 +16,6 @@ export const About = () => {
           <br />
         </p>
         <h3> {"― Lao Tzu, Tao Te Ching"} </h3>
-
       </Article>
       <AboutInfo>
         <Article>
