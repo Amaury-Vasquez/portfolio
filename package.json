@@ -1,7 +1,7 @@
 {
-  "name": "react-tsx-setup",
+  "name": "Amaury Vasquez portfolio, v2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Portfolio created in react",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -36,6 +36,7 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-helmet-async": "^1.3.0",
+    "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
     "styled-components": "^5.3.5",
     "workbox-expiration": "^6.5.3",
@@ -43,5 +44,13 @@
     "workbox-routing": "^6.5.3",
     "workbox-strategies": "^6.5.3",
     "workbox-webpack-plugin": "^6.5.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amaury-Vasquez/portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Amaury-Vasquez/portfolio/issues"
+  },
+  "homepage": "https://github.com/Amaury-Vasquez/portfolio#readme"
 }
