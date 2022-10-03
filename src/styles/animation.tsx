@@ -33,3 +33,54 @@ export const fadeOut = ({ time = '1s', type = 'ease' } = {}) =>
   css`
     animation: ${time} ${fadeOutKeyframes} ${type};
   `;
+
+const typingKeyframes = keyframes`
+  from {
+    width: 0;
+  }
+`;
+
+const cursorKeyframes = keyframes`
+  from {
+    border-right: 2px solid white;
+  }
+`;
+
+export const typeWriter = ({ len = '20', time = 2 } = {}) => css`
+  width: ${len}ch;
+  animation: ${typingKeyframes} ${time + 's'} steps(${len}),
+    ${cursorKeyframes} ${time * 2 + 's'} linear;
+  overflow: hidden;
+  white-space: nowrap;
+`;
+
+const placeHolderKeyframes = keyframes`  
+  to {
+    background-position: 315px 0, 0 0, 0 190px, 50px 195px;
+  }
+`;
+
+export const skeleton = ({ time = '2s' } = {}) => css`
+  animation: ${placeHolderKeyframes} ${time} infinite;
+  background-repeat: no-repeat;
+  cursor: progress;
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%;
+  background-position: -315px 0, 0 0, 0px 190px, 50px 195px;
+`;
+
+const colorLoadKeyframes = keyframes`
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+export const colorLoading = css`
+  animation: ${colorLoadKeyframes} 1s linear infinite;
+`;
