@@ -14,4 +14,10 @@ export const Screen = styled.div`
   left: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+
+  & > div {
+    height: 50px;
+    width: 50px;
+  }
 `;

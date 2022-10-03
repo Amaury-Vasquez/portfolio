@@ -1,11 +1,11 @@
-import { Loader } from '../../Loader';
+import { BounceLoader } from '../BounceLoader';
 
 import { Screen } from './styles';
 
 export const FallbackScreen = () => {
   return (
     <Screen>
-      <Loader />
+      <BounceLoader />
     </Screen>
   );
 };
