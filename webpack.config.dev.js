@@ -1,4 +1,5 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -42,6 +43,7 @@ module.exports = {
       filename: './index.html',
     }),
     new CleanWebpackPlugin(),
+    new Dotenv(),
   ],
   devServer: {
     // contentBase: path.join(__dirname, 'dist'),
