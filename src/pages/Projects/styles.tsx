@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+
 import { DeviceSize } from '../../DeviceSize';
 
-const { smallMobile, laptop, laptopL, desktop } = DeviceSize;
+const { smallMobile, smallTablet, laptop, laptopL, desktop } = DeviceSize;
 
 export const ProjectPage = styled.div`
   width: 100vw;
@@ -25,6 +26,11 @@ export const Layout = styled.div`
   @media screen and (max-width: ${laptopL}) {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  @media screen and (max-width: ${smallTablet}) {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -32,4 +38,9 @@ export const ButtonWrapper = styled.div`
   width: 150px;
   margin: 0 auto;
   margin-top: 30px;
+
+  @media screen and (max-width: ${smallTablet}) {
+    margin-top: 0;
+    padding-bottom: 20px;
+  }
 `;

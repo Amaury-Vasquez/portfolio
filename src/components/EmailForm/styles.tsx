@@ -1,5 +1,9 @@
 import styled from 'styled-components';
+
 import { colorLoading, fadeIn, fadeOut } from '../../styles/animation';
+import { DeviceSize } from '../../DeviceSize';
+
+const { smallMobile, smallTablet, laptop, laptopL, desktop } = DeviceSize;
 
 export const Form = styled.form`
   position: relative;
@@ -11,6 +15,11 @@ export const Form = styled.form`
   align-items: center;
   justify-content: space-around;
   line-height: 2rem;
+
+  @media screen and (max-width: ${smallTablet}) {
+    width: 100%;
+    padding: 0;
+  }
 `;
 
 export const Label = styled.label`
@@ -26,6 +35,10 @@ export const IconInput = styled.div<{ color?: string }>`
   width: 400px;
   margin-bottom: 15px;
   position: relative;
+
+  @media screen and (max-width: ${smallTablet}) {
+    width: 100%;
+  }
 `;
 
 export const Icon = styled.span`
@@ -118,6 +131,10 @@ export const SubmitButton = styled.button`
   &:focus {
     border: 2px solid var(--green);
     opacity: 0.5;
+  }
+
+  @media screen and (max-width: ${smallTablet}) {
+    margin-top: 20px;
   }
 `;
 

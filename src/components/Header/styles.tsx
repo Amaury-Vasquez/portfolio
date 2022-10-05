@@ -3,7 +3,7 @@ import { Link as Anchor } from 'react-router-dom';
 
 import { DeviceSize } from '../../DeviceSize';
 
-const { smallMobile, laptop, laptopL, desktop } = DeviceSize;
+const { smallMobile, smallTablet, laptop, laptopL, desktop } = DeviceSize;
 
 export const Head = styled.header`
   height: 50px;
@@ -19,6 +19,28 @@ export const Head = styled.header`
     margin: 0 auto;
     width: min(100vw, 1500px);
   }
+
+  @media screen and (max-width: ${smallTablet}) {
+    height: 100px;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 1fr;
+    padding: 0;
+
+    & > a {
+      grid-row: 1;
+      margin: 0 auto;
+
+      &:hover,
+      :focus {
+        border-bottom: none;
+      }
+    }
+
+    & > * {
+      width: 100vw;
+    }
+  }
 `;
 
 export const NavBar = styled.nav`
@@ -26,7 +48,7 @@ export const NavBar = styled.nav`
   width: auto;
   display: grid;
   place-items: center;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
 `;
 
