@@ -14,7 +14,7 @@ const spin = keyframes`
 export const Spin = styled.div`
   ${fadeIn()};
   /* border: 1px solid white; */
-  border-top: 1px solid var(--orange);
+  border-top: 1px solid var(--red);
   border-radius: 100%;
   width: 30px;
   height: 30px;
