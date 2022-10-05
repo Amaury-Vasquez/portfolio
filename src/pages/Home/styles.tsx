@@ -1,6 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
-
+import styled from 'styled-components';
 import { fadeIn, typeWriter } from '../../styles/animation';
 
 export const HomePage = styled.div`
@@ -67,32 +65,8 @@ export const Image = styled.img`
   height: auto;
 `;
 
-export const Tour = styled(Link)`
+export const ButtonWrapper = styled.div`
   margin-top: 30px;
-  ${fadeIn()};
-  background: var(--soft-orange);
   height: auto;
   width: auto;
-  padding: 15px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  border-radius: 50px;
-  font-size: 1em;
-  font-weight: 600;
-  font-style: normal;
-
-  & > svg {
-    margin-left: 5px;
-    color: white;
-  }
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &:focus {
-    opacity: 0.6;
-  }
 `;

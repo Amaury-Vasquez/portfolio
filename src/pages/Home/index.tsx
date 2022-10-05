@@ -1,8 +1,13 @@
-import { IoMdArrowRoundForward } from 'react-icons/io';
-
 // Custom hook for home page
 import { useHome } from './useHome';
-import { HomePage, Introduction, Image, Tour, Container } from './styles';
+import { Button } from '../../components/Button';
+import {
+  HomePage,
+  Introduction,
+  Image,
+  Container,
+  ButtonWrapper,
+} from './styles';
 
 const Home = () => {
   const { loaded, img, mapMessages, showImage, showButton } = useHome(
@@ -14,11 +19,10 @@ const Home = () => {
       <Introduction>{mapMessages()}</Introduction>
       <Container>
         {showImage && loaded && <Image src={img} alt="Amaury Vasquez" />}
-
         {showButton && loaded && (
-          <Tour to="/projects">
-            Start tour <IoMdArrowRoundForward />
-          </Tour>
+          <ButtonWrapper>
+            <Button link="/projects" text="Start tour" />
+          </ButtonWrapper>
         )}
       </Container>
     </HomePage>

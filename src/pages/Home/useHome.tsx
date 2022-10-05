@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { FaReact, FaUserSecret } from 'react-icons/fa';
 
 import { What, Who } from './styles';
+import { useStrings } from '../../hooks/useStrings';
 import { useImageLoad } from '../../hooks/useImageLoad';
 
 export const useHome = (url: string) => {
@@ -26,15 +27,9 @@ export const useHome = (url: string) => {
   const [showImage, setImage] = useState(false);
   const [showButton, setButton] = useState(false);
   const { img, loaded } = useImageLoad(url);
+  const { chString } = useStrings();
 
   // Functions
-  const chString = (str: string) => {
-    let count = 0;
-    for (let i = 0; i < str.length; i++)
-      count = str.charAt(i) === ' ' ? count + 1 : count;
-    return str.length - count;
-  };
-
   const mapMessages = () =>
     intro.slice(0, limit).map((item, i) => (
       <item.element
