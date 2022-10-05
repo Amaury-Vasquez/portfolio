@@ -13,6 +13,8 @@ const bounce = keyframes`
 //Width and height expected to be given by father
 export const Spinner = styled.div`
   position: relative;
+  height: 50px;
+  width: 50px;
 
   & > div {
     width: 100%;
