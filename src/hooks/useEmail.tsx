@@ -1,5 +1,7 @@
-import { joiResolver } from '@hookform/resolvers/joi';
 import Joi from 'joi';
+import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { joiResolver } from '@hookform/resolvers/joi';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 interface Inputs {
@@ -7,6 +9,14 @@ interface Inputs {
   email: string;
   message: string;
 }
+export interface EmailRequest {
+  sended: boolean;
+  status: number;
+}
+
+const TEMPLATE_ID = process.env.TEMPLATE_ID || '';
+const PUBLIC_KEY = process.env.PUBLIC_KEY || '';
+const SERVICE_ID = process.env.SERVICE_ID || '';
 
 const emailDataSchema = Joi.object({
   name: Joi.string().min(2).max(40).required(),
@@ -20,10 +30,47 @@ export const useEmail = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>({ resolver: joiResolver(emailDataSchema) });
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
-    console.log(errors);
+  const [fade, setFade] = useState(0);
+  const [request, setRequest] = useState<EmailRequest | undefined>();
+  const [sending, setSending] = useState(false);
+
+  const onSubmit: SubmitHandler<Inputs> = (data: Inputs) => {
+    setSending(true);
+
+    (async () => {
+      const { name, email, message } = data;
+      const templateParams = {
+        name,
+        email,
+        message,
+      };
+      const fadeContent = () => {
+        setTimeout(() => {
+          setFade(1);
+          setTimeout(() => {
+            setSending(false);
+            setFade(0);
+          }, 1000);
+        }, 3000);
+      };
+
+      await emailjs
+        .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+        .then((result) => {
+          const { status } = result;
+          const req: EmailRequest = { status, sended: true };
+          setRequest(req);
+          fadeContent();
+        })
+        .catch((e) => {
+          console.log(e);
+          const status = 400;
+          const req: EmailRequest = { status, sended: false };
+          setRequest(req);
+          fadeContent();
+        });
+    })();
   };
 
-  return { errors, handleSubmit, onSubmit, register };
+  return { errors, handleSubmit, fade, onSubmit, register, request, sending };
 };
