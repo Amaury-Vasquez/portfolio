@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import { colorLoading, fadeIn, fadeOut } from '../../styles/animation';
 
 export const Form = styled.form`
+  position: relative;
   margin: 0 auto;
   width: fit-content;
   padding: 30px;
@@ -78,9 +80,9 @@ export const MessageInput = styled.textarea`
 `;
 
 export const Required = styled.span`
+  ${fadeIn({ time: '0.5s' })};
   color: var(--red);
   font-size: 1rem;
-  font-style: italic;
   padding-left: 5px;
   width: 100%;
   text-align: left;
@@ -117,4 +119,57 @@ export const SubmitButton = styled.button`
     border: 2px solid var(--green);
     opacity: 0.5;
   }
+`;
+
+export const Sending = styled.div`
+  ${fadeIn()};
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > p {
+    ${colorLoading};
+  }
+  & > * {
+    margin-bottom: 50px;
+  }
+`;
+
+export const Action = styled.p`
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+`;
+
+export const ActionMessage = styled.p`
+  font-size: 1.2rem;
+  text-align: center;
+`;
+
+export const EmailSent = styled.div<{ success?: number; fadeOut?: number }>`
+  ${fadeIn()};
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > svg {
+    font-size: 2rem;
+    color: ${(props) => (props.success ? 'var(--soft-orange)' : 'var(--red)')};
+    margin-top: 10px;
+  }
+
+  ${(props) => props.fadeOut && fadeOut()};
+  /* background: var(--soft-orange); */
 `;

@@ -1,7 +1,9 @@
 import { BiMailSend } from 'react-icons/bi';
+import { MdMarkEmailRead, MdOutlineError } from 'react-icons/md';
 import { AiOutlineMail, AiOutlineUser } from 'react-icons/ai';
 
-import { useEmail } from '../../hooks/useEmail';
+import { BounceLoader } from '../BounceLoader';
+import { useEmail, EmailRequest } from '../../hooks/useEmail';
 import {
   Form,
   Label,
@@ -11,10 +13,43 @@ import {
   MessageInput,
   Required,
   SubmitButton,
+  Sending,
+  Action,
+  ActionMessage,
+  EmailSent,
 } from './styles';
+import React from 'react';
+
+const SendingEmail = (props: {
+  data: EmailRequest | undefined;
+  fadeOut: number;
+}) => {
+  const { data, fadeOut } = props;
+  if (!data)
+    return (
+      <Sending>
+        <Action> Your email is being sent </Action>
+        <BounceLoader />
+        <ActionMessage> Please wait a few seconds... </ActionMessage>
+      </Sending>
+    );
+  const { sended } = data;
+  return sended ? (
+    <EmailSent success={1} fadeOut={fadeOut}>
+      <Action> Your email has been sent! </Action>
+      <MdMarkEmailRead />
+    </EmailSent>
+  ) : (
+    <EmailSent success={0} fadeOut={fadeOut}>
+      <Action> Your email could not be sent! </Action>
+      <MdOutlineError />
+    </EmailSent>
+  );
+};
 
 export const EmailForm = () => {
-  const { errors, handleSubmit, onSubmit, register } = useEmail();
+  const { errors, handleSubmit, fade, onSubmit, register, request, sending } =
+    useEmail();
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -48,10 +83,16 @@ export const EmailForm = () => {
         placeholder="Leave your message here"
         {...register('message', { required: true })}
       />
-      <SubmitButton type="submit">
-        Send message
+      <SubmitButton
+        type="submit"
+        onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+          e.currentTarget && e.currentTarget.blur();
+        }}
+      >
+        Send email
         <BiMailSend />
       </SubmitButton>
+      {sending && <SendingEmail data={request} fadeOut={fade} />}
     </Form>
   );
 };
