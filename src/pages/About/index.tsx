@@ -27,7 +27,6 @@ const About = () => {
       <Info>
         <InfoText>
           <p>
-            <br />
             I am currently pursuing my third year bachelor degree in computer
             systems, at ESCOM IPN, while also working at different personal
             projects in order to increase mi technical skills. <br />
