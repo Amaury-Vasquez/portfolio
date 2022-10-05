@@ -14,10 +14,6 @@ export interface EmailRequest {
   status: number;
 }
 
-const TEMPLATE_ID = process.env.TEMPLATE_ID || '';
-const PUBLIC_KEY = process.env.PUBLIC_KEY || '';
-const SERVICE_ID = process.env.SERVICE_ID || '';
-
 const emailDataSchema = Joi.object({
   name: Joi.string().min(2).max(40).required(),
   email: Joi.string().email({ tlds: { allow: false } }),
@@ -54,21 +50,26 @@ export const useEmail = () => {
         }, 3000);
       };
 
-      await emailjs
-        .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
-        .then((result) => {
-          const { status } = result;
-          const req: EmailRequest = { status, sended: true };
-          setRequest(req);
-          fadeContent();
-        })
-        .catch((e) => {
-          console.log(e);
-          const status = 400;
-          const req: EmailRequest = { status, sended: false };
-          setRequest(req);
-          fadeContent();
-        });
+      try {
+        // env variables
+        const TEMPLATE_ID = process.env.TEMPLATE_ID || '';
+        const PUBLIC_KEY = process.env.PUBLIC_KEY || '';
+        const SERVICE_ID = process.env.SERVICE_ID || '';
+
+        await emailjs
+          .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+          .then((result) => {
+            const { status } = result;
+            const req: EmailRequest = { status, sended: true };
+            setRequest(req);
+            fadeContent();
+          });
+      } catch (e) {
+        const status = 400;
+        const req: EmailRequest = { status, sended: false };
+        setRequest(req);
+        fadeContent();
+      }
     })();
   };
 
