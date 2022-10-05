@@ -1,5 +1,5 @@
 {
-  "name": "Amaury Vasquez portfolio, v2",
+  "name": "Amaury Vasquez portfolio v2",
   "version": "1.0.0",
   "description": "Portfolio created in react",
   "main": "webpack.config.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --config=webpack.config.dev.js",
     "build": "webpack --config=webpack.config.js && echo '/* /index.html 200' | cat >dist/_redirects ",
-    "serve": "serve -s dist"
+    "serve": "npm run build && serve -s dist"
   },
   "keywords": [],
   "author": "",
@@ -22,8 +22,10 @@
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.2.4",
+    "dotenv-webpack": "^8.0.1",
     "html-minimizer-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "serve": "^14.0.1",
     "source-map-loader": "^3.0.1",
     "terser-webpack-plugin": "^5.3.1",
     "ts-loader": "^9.3.0",
@@ -33,6 +35,7 @@
     "webpack-dev-server": "^4.8.1"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.7.0",
     "@hookform/resolvers": "^2.9.8",
     "joi": "^17.6.2",
     "react": "18.1.0",
