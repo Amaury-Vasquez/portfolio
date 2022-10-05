@@ -1,6 +1,7 @@
 import { useProjects } from './useProjects';
-import { ProjectPage, Layout } from './styles';
+import { Button } from '../../components/Button';
 import { Project } from '../../components/Project';
+import { ProjectPage, Layout, ButtonWrapper } from './styles';
 
 const Projects = () => {
   const { projectList } = useProjects();
@@ -15,6 +16,9 @@ const Projects = () => {
           />
         ))}
       </Layout>
+      <ButtonWrapper>
+        <Button link="/about" text="Continue" />
+      </ButtonWrapper>
     </ProjectPage>
   );
 };

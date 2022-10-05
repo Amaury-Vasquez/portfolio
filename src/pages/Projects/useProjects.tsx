@@ -32,7 +32,7 @@ export const useProjects = () => {
       website: 'https://amauryvasquez.com/',
     },
     {
-      name: 'game station',
+      name: 'amvas games',
       description:
         'project created to recolect some simple games created at individual pages and gather them together.',
       powered: {
@@ -40,7 +40,7 @@ export const useProjects = () => {
         Icon: <FaReact />,
         color: 'var(--blue)',
       },
-      repositorie: 'https://github.com/Amaury-Vasquez/game-station',
+      repositorie: 'https://github.com/Amaury-Vasquez/amvas-games',
       imageUrl: 'https://i.imgur.com/KoQhZik.png',
       website: 'https://games.amauryvasquez.com/',
     },

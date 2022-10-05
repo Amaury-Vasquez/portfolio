@@ -26,3 +26,10 @@ export const Layout = styled.div`
     grid-template-columns: repeat(3, 1fr);
   }
 `;
+
+export const ButtonWrapper = styled.div`
+  height: auto;
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 30px;
+`;
