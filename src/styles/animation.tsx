@@ -56,17 +56,17 @@ export const typeWriter = ({ len = '20', time = 2 } = {}) => css`
 
 const placeHolderKeyframes = keyframes`  
   to {
-    background-position: 315px 0, 0 0, 0 190px, 50px 195px;
+    background-position: 800px;
   }
 `;
 
 export const skeleton = ({ time = '2s' } = {}) => css`
   animation: ${placeHolderKeyframes} ${time} infinite;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   cursor: progress;
-  background-repeat: no-repeat;
-  background-size: 100% 100%, 100% 100%;
-  background-position: -315px 0, 0 0, 0px 190px, 50px 195px;
+  /* background-repeat: no-repeat; */
+  background-size: 1600px;
+  background-position: -800px;
 `;
 
 const colorLoadKeyframes = keyframes`
