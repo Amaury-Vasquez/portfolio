@@ -1,3 +1,4 @@
+import { Loader } from '../Loader';
 import { useStrings } from '../../hooks/useStrings';
 import { useImageLoad } from '../../hooks/useImageLoad';
 import { ProjectData } from '../../pages/Projects/useProjects';
@@ -24,8 +25,7 @@ export const Project = (props: { data: ProjectData }) => {
 
   return !loaded ? (
     <Loading>
-      <LoadHead />
-      <LoadBody />
+      <Loader />
     </Loading>
   ) : (
     <ProjectSample>
@@ -47,7 +47,7 @@ export const Project = (props: { data: ProjectData }) => {
             </ProjectLink>
             {website && (
               <ProjectLink
-                href={repositorie}
+                href={website}
                 target="_blank"
                 rel="noopener noreferrer"
               >

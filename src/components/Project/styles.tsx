@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { fadeIn, colorLoading } from '../../styles/animation';
+import { fadeIn, colorLoading, skeleton } from '../../styles/animation';
 
 export const ProjectSample = styled.div`
   width: 100%;
@@ -14,20 +14,24 @@ export const Loading = styled.div`
   aspect-ratio: 6 / 7;
   width: 100%;
   display: grid;
-  grid-template-rows: 1fr 6fr;
+  /* grid-template-rows: 1fr 6fr; */
   place-items: center;
-
-  & > div {
+  /* border: 1px solid var(--soft-orange); */
+  background: linear-gradient(to right, var(--soft-orange), var(--green));
+  border-radius: 10px;
+  ${skeleton({ time: '2s' })};
+  /* ${colorLoading}; */
+  /* & > div {
     width: 100%;
     height: 100%;
-  }
+  } */
 `;
 
 export const LoadHead = styled.div`
   background: var(--soft-orange);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  ${colorLoading};
+  /* ${colorLoading}; */
 `;
 
 export const LoadBody = styled.div`
@@ -38,8 +42,8 @@ export const LoadBody = styled.div`
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 20px;
-  background: #bbb;
-  ${colorLoading};
+  background: rgba(255, 255, 255, 0.6);
+  /* ${colorLoading}; */
 `;
 
 export const ProjectName = styled.span`
