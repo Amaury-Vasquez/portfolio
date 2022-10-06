@@ -29,7 +29,7 @@ export const useProjects = () => {
       },
       repositorie: 'https://github.com/Amaury-Vasquez/updated-portfolio',
       imageUrl: 'https://i.imgur.com/4WHrC2l.png?2',
-      website: 'https://amauryvasquez.com/',
+      website: 'https://v1.amauryvasquez.com/',
     },
     {
       name: 'amvas games',
