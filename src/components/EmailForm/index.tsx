@@ -33,16 +33,16 @@ const SendingEmail = (props: {
         <ActionMessage> Please wait a few seconds... </ActionMessage>
       </Sending>
     );
-  const { sended } = data;
-  return sended ? (
-    <EmailSent success={1} fadeOut={fadeOut}>
-      <Action> Your email has been sent! </Action>
-      <MdMarkEmailRead />
-    </EmailSent>
-  ) : (
-    <EmailSent success={0} fadeOut={fadeOut}>
-      <Action> Your email could not be sent! </Action>
-      <MdOutlineError />
+  const { sended, status } = data;
+  return (
+    <EmailSent success={sended ? 1 : 0} fadeOut={fadeOut}>
+      <Action>
+        {sended
+          ? 'Your email has been sent!'
+          : 'Your email could not be sent! '}
+      </Action>
+      {status === 200 && <MdMarkEmailRead />}
+      {status === 400 && <MdOutlineError />}
     </EmailSent>
   );
 };
