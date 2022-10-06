@@ -1,5 +1,4 @@
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -43,7 +42,6 @@ module.exports = {
         },
       ],
     }),
-    new Dotenv(),
     new WorkboxPlugin.InjectManifest({
       swSrc: './src/service-worker.js',
       swDest: 'service-worker.js',
