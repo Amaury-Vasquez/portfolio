@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { DeviceSize } from '../../DeviceSize';
 import { fadeIn, typeWriter } from '../../styles/animation';
 
-const { smallMobile, smallTablet, laptop, laptopL, desktop } = DeviceSize;
+const { smallMobile, smallTablet, tablet, laptop, laptopL, desktop } =
+  DeviceSize;
 
 export const AboutPage = styled.div`
   ${fadeIn({ time: '1s' })};
@@ -68,6 +69,10 @@ export const Info = styled.div`
     padding: 0 30px;
   }
 
+  @media screen and (max-width: ${tablet}) {
+    padding: 30px 0;
+  }
+
   @media screen and (max-width: ${smallTablet}) {
     grid-template-columns: 1fr;
     padding: 0;
@@ -101,6 +106,10 @@ export const InfoList = styled.article`
     font-style: italic;
   }
 
+  @media screen and (max-width: ${tablet}) {
+    padding: 0 10px;
+  }
+
   @media screen and (max-width: ${smallTablet}) {
     display: flex;
     flex-direction: column;
@@ -127,6 +136,14 @@ export const ListItem = styled.p<{ color: string; n: number }>`
   & > svg {
     margin-right: 10px;
     fill: ${(props) => props.color};
+  }
+
+  @media screen and (max-width: ${tablet}) {
+    text-align: center;
+    & > svg {
+      font-size: 1.5em;
+      margin-right: 5px;
+    }
   }
 
   @media screen and (max-width: ${smallTablet}) {

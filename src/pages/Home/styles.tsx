@@ -46,6 +46,10 @@ export const What = styled.p<{ len: number; time: number }>`
   @media screen and (max-width: ${smallTablet}) {
     font-size: 1.5em;
   }
+
+  @media screen and (max-width: ${smallMobile}) {
+    font-size: 1.2em;
+  }
 `;
 
 export const Where = styled.p<{ len: number; time: number }>`
@@ -75,6 +79,8 @@ export const Who = styled.p<{ len: number; time: number }>`
 
   @media screen and (max-width: ${smallTablet}) {
     ${fadeIn()};
+    font-size: 1.2em;
+    margin-bottom: 20px;
   }
 `;
 

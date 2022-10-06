@@ -55,6 +55,10 @@ export const NavBar = styled.nav`
 const selected = css`
   color: var(--orange);
   border-bottom: 1px solid var(--orange);
+
+  @media screen and (max-width: ${smallTablet}) {
+    border-bottom: none;
+  }
 `;
 
 export const Link = styled(Anchor)<{ active: number }>`
@@ -81,5 +85,9 @@ export const Link = styled(Anchor)<{ active: number }>`
 
   &:focus {
     outline: none;
+  }
+
+  @media screen and (max-width: ${smallMobile}) {
+    padding: 0 5px;
   }
 `;
