@@ -52,9 +52,9 @@ export const useEmail = () => {
 
       try {
         // env variables
-        const TEMPLATE_ID = process.env.TEMPLATE_ID || '';
-        const PUBLIC_KEY = process.env.PUBLIC_KEY || '';
-        const SERVICE_ID = process.env.SERVICE_ID || '';
+        const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID || '';
+        const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY || '';
+        const SERVICE_ID = process.env.REACT_APP_SERVICE_ID || '';
 
         await emailjs
           .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
